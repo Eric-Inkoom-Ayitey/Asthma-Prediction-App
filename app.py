@@ -20,39 +20,41 @@ st.markdown("---")
 # Input Fields
 st.subheader("🔎 Enter Patient Information")
 
+# Streamlit input fields for asthma prediction
 gender = st.selectbox("Gender", ["Male", "Female", "Other"])
 smoking_status = st.selectbox("Smoking Status", ["Never Smoked", "Former Smoker", "Current Smoker"])
-allergies = st.selectbox("Allergies", ["None", "Dust", "Pollen", "Pet Dander", "Other"])
-air_pollution = st.selectbox("Air Pollution Exposure", ["Low", "Moderate", "High"])
+family_history = st.selectbox("Family History of Asthma", ["Yes", "No"])
+allergies = st.selectbox("Allergies", ["None", "Dust", "Pollen", "Pet Dander", "Food", "Other"])
+air_pollution = st.selectbox("Air Pollution Level", ["Low", "Moderate", "High"])
 activity_level = st.selectbox("Physical Activity Level", ["Sedentary", "Moderate", "Active"])
 occupation = st.selectbox("Occupation Type", ["Desk Job", "Outdoor Work", "Medical", "Education", "Other"])
 comorbidities = st.selectbox("Comorbidities", ["None", "Diabetes", "Hypertension", "Obesity", "Other"])
 
 age = st.slider("Age", 1, 90, 25)
-bmi = st.slider("Body Mass Index (BMI)", 10.0, 50.0, 22.0)
-feno = st.slider("FeNO Level (ppb)", 0, 100, 20)
+bmi = st.slider("BMI", 10.0, 50.0, 22.0)
+feno = st.slider("FeNO Level (ppb)", 0, 100, 25)
 er_visits = st.slider("Number of ER Visits in Past Year", 0, 10, 0)
 med_adherence = st.slider("Medication Adherence (%)", 0, 100, 75)
+pef = st.slider("Peak Expiratory Flow (L/min)", 100, 600, 400)
 
-# Collect user inputs into a dictionary
+# Assemble user input into a DataFrame for prediction
 input_dict = {
-    "Gender": gender,
-    "Smoking Status": smoking_status,
-    "Allergies": allergies,
-    "Air Pollution Exposure": air_pollution,
-    "Physical Activity Level": activity_level,
-    "Occupation Type": occupation,
-    "Comorbidities": comorbidities,
     "Age": age,
-    "Body Mass Index (BMI)": bmi,
-    "FeNO Level (ppb)": feno,
-    "Number of ER Visits in Past Year": er_visits,
-    "Medication Adherence (%)": med_adherence
+    "Gender": gender,
+    "BMI": bmi,
+    "Smoking_Status": smoking_status,
+    "Family_History": family_history,
+    "Allergies": allergies,
+    "Air_Pollution_Level": air_pollution,
+    "Physical_Activity_Level": activity_level,
+    "Occupation_Type": occupation,
+    "Comorbidities": comorbidities,
+    "Medication_Adherence": med_adherence,
+    "Number_of_ER_Visits": er_visits,
+    "Peak_Expiratory_Flow": pef,
+    "FeNO_Level": feno
 }
-
-# Create dataframe
 input_df = pd.DataFrame([input_dict])
-
 prediction = model.predict(input_df)[0]
 
 # Prediction Button

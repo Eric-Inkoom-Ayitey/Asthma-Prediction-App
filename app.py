@@ -62,6 +62,6 @@ if st.button("🔍 Predict Asthma Risk"):
 
 # Credits
 st.markdown("---")
-st.markdown("📌 **Project Author:** Eric Inkoom Ayitey
-🧠 **Focus Areas:** Data Science | Healthcare Analytics | ML for Social Impact  
-📅 **Version:** v1.0 — July 2025", unsafe_allow_html=True)
+st.markdown("📌 **Project Author:** Eric Inkoom Ayitey<br>"
+            "🧠 **Focus Areas:** Data Science | Healthcare Analytics | ML for Social Impact<br>"
+            "📅 **Version:** v1.0 — July 2025", unsafe_allow_html=True)

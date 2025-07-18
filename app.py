@@ -53,10 +53,7 @@ input_dict = {
 # Create dataframe
 input_df = pd.DataFrame([input_dict])
 
-# Automatically encode string values using LabelEncoder
-for col in input_df.select_dtypes(include="object").columns:
-    encoder = LabelEncoder()
-    input_df[col] = encoder.fit_transform(input_df[col])
+prediction = model.predict(input_df)[0]
 
 # Prediction Button
 if st.button("🔍 Predict Asthma Risk"):

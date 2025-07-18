@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 from PIL import Image
+from sklearn.preprocessing import LabelEncoder
 
 # Load model
 model = joblib.load("asthma_prediction_pipeline.pkl")
@@ -33,6 +34,22 @@ feno = st.slider("FeNO Level (ppb)", 0, 100, 20)
 er_visits = st.slider("Number of ER Visits in Past Year", 0, 10, 0)
 med_adherence = st.slider("Medication Adherence (%)", 0, 100, 75)
 
+# Collect user inputs into a dictionary
+input_dict = {
+    "Gender": gender,
+    "Smoking Status": smoking_status,
+    "Allergies": allergies,
+    "Air Pollution Exposure": air_pollution,
+    "Physical Activity Level": activity_level,
+    "Occupation Type": occupation,
+    "Comorbidities": comorbidities,
+    "Age": age,
+    "Body Mass Index (BMI)": bmi,
+    "FeNO Level (ppb)": feno,
+    "Number of ER Visits in Past Year": er_visits,
+    "Medication Adherence (%)": med_adherence
+}
+
 # Create dataframe
 input_df = pd.DataFrame([input_dict])
 
@@ -43,7 +60,7 @@ for col in input_df.select_dtypes(include="object").columns:
 
 # Prediction Button
 if st.button("🔍 Predict Asthma Risk"):
-    prediction = model.predict(input_data)[0]
+    prediction = model.predict(input_df)[0]
     st.markdown("---")
     if prediction == 1:
         st.markdown("<h4 style='color: red;'>High likelihood of asthma detected.</h4>", unsafe_allow_html=True)

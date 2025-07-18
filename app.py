@@ -11,7 +11,7 @@ image = Image.open("asthma_banner.png")
 
 # App Title + Branding
 st.set_page_config(page_title="Asthma Risk Predictor", layout="centered")
-st.image(image, use_column_width=True)
+st.image(image, use_container_width=True)
 st.markdown("<h2 style='text-align: center; color: teal;'>Asthma Risk Prediction Tool</h2>", unsafe_allow_html=True)
 st.markdown("This tool uses a trained machine learning model to estimate asthma likelihood based on synthetic health data.", unsafe_allow_html=True)
 st.markdown("---")
@@ -33,21 +33,13 @@ feno = st.slider("FeNO Level (ppb)", 0, 100, 20)
 er_visits = st.slider("Number of ER Visits in Past Year", 0, 10, 0)
 med_adherence = st.slider("Medication Adherence (%)", 0, 100, 75)
 
-# Prepare DataFrame
-input_data = pd.DataFrame({
-    "Gender": [gender],
-    "Smoking_Status": [smoking_status],
-    "Allergies": [allergies],
-    "Air_Pollution_Level": [air_pollution],
-    "Physical_Activity_Level": [activity_level],
-    "Occupation_Type": [occupation],
-    "Comorbidities": [comorbidities],
-    "Age": [age],
-    "BMI": [bmi],
-    "FeNO_Level": [feno],
-    "Number_of_ER_Visits": [er_visits],
-    "Medication_Adherence": [med_adherence]
-})
+# Create dataframe
+input_df = pd.DataFrame([input_dict])
+
+# Automatically encode string values using LabelEncoder
+for col in input_df.select_dtypes(include="object").columns:
+    encoder = LabelEncoder()
+    input_df[col] = encoder.fit_transform(input_df[col])
 
 # Prediction Button
 if st.button("🔍 Predict Asthma Risk"):

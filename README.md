@@ -67,30 +67,43 @@ The dataset simulates 15 features spanning:
 
 ## 🖼️ Visual Snapshot
 
-This section features a curated selection of visuals that explore demographic, behavioral, and environmental patterns linked to asthma risk:
+This section showcases key visuals from the asthma risk prediction project, providing insight into demographic, behavioral, and environmental factors contributing to asthma prevalence.
 
-1. 🧑‍🤝‍🧑 Gender Distribution & Asthma Prevalence
-Alt Text: Grouped bar chart showing asthma prevalence by gender Caption: Female and male groups show similar asthma rates, with a lower prevalence among nonbinary/other individuals. Embed Code:
+---
 
-![Asthma vs Gender: Grouped bar chart showing asthma prevalence by gender](image1.png)
+### 🧑‍🤝‍🧑 Gender Distribution & Asthma Prevalence
+
+![Grouped bar chart showing asthma prevalence by gender](image_2.png)
+
+**Figure 1:** Asthma is distributed almost evenly across male and female patients, with a noticeably lower count among nonbinary individuals. This demographic profile supports inclusive modeling for public health contexts.
+
+---
+
+### 🚬 Smoking Status vs Asthma Risk
+
+![Bar chart comparing asthma occurrence across smoking categories](image_3.png)
+
+**Figure 2:** Current smokers show the highest asthma prevalence relative to other groups. This behavioral insight highlights smoking as a critical risk factor — reinforcing the predictive weight of lifestyle metrics.
+
+---
+
+### 🌾 Allergy Types & Asthma Correlation
+
+![Bar chart showing asthma cases linked to different allergy types](image_4.png)
+
+**Figure 3:** Environmental allergens like dust and pollen are strongly correlated with asthma occurrence. The plot suggests sensitivity to common triggers significantly elevates risk — a key input for screening models.
+
+---
+
+### 📈 Target Variable Distribution
+
+![Bar chart illustrating the number of asthma-positive vs asthma-negative cases](image_1.png)
+
+**Figure 4:** The dataset is imbalanced — with significantly more patients not diagnosed with asthma. This informs model tuning and evaluation, especially in optimizing precision and recall for minority cases.
+
+---
 
 
-2. 🚬 Smoking Status vs Asthma Risk
-Alt Text: Bar chart comparing asthma occurrence across smoking categories Caption: Current smokers exhibit the highest asthma prevalence, underscoring the health impact of smoking behavior. Embed Code:
-
-![Smoking Status vs Asthma: Bar chart comparing asthma occurrence across smoking categories](image2.png)
-
-
-3. 🌾 Allergy Types & Asthma Correlation
-Alt Text: Bar chart showing asthma cases linked to different allergy types Caption: Dust and pollen allergies lead the way in asthma association — key factors in environmental risk modeling. Embed Code:
-
-![Allergy Type vs Asthma: Bar chart showing asthma cases linked to different allergy types](image3.png)
-
-
-4. 📈 Target Variable Distribution
-Alt Text: Bar chart illustrating the number of asthma-positive vs asthma-negative cases Caption: Dataset imbalance with more negative cases informs model evaluation strategy and handling of precision-recall trade-offs. Embed Code:
-
-![Has Asthma Distribution: Bar chart illustrating the number of asthma-positive vs asthma-negative cases](image4.png)
 
 ---
 
@@ -98,9 +111,9 @@ Alt Text: Bar chart illustrating the number of asthma-positive vs asthma-negativ
 
 The app is deployed via **Streamlit Community Cloud** and accepts 14 patient features. It uses a trained ML pipeline to dynamically encode and scale user inputs, returning predicted asthma likelihood in real time.
 
-### Access:
+### 🚀 **Project Access**
 
-👉 [Live App](https://asthma-prediction-app-edksy83arxrfajqyzfnmtv.streamlit.app/)  
+👉 **[🔗 Live App – Asthma Risk Prediction](https://asthma-prediction-app-edksy83arxrfajqyzfnmtv.streamlit.app/)**  
 
 ### Files Included:
 
@@ -126,8 +139,7 @@ The app is deployed via **Streamlit Community Cloud** and accepts 14 patient fea
 | `Asthma_Prediction.ipynb`    | Clean analysis notebook with modeling flow   |
 | `Asthma_Visuals.html`        | Exported standalone HTML report              |
 | `README.md`                  | Project overview and technical guide         |
-| `uvfExsgG4VNtcLH513brr.png`  | Feature importance plot for visual impact    |
-| `F4YCi1T5sJFQYUefMPiLj.png`  | Evaluation matrix and confusion insights     |
+| `image_1, image_2, image_3`  | Feature importance plot for visual impact    |
 
 ---
 

@@ -67,11 +67,30 @@ The dataset simulates 15 features spanning:
 
 ## 🖼️ Visual Snapshot
 
-Feature importance chart generated from the trained model:
+This section features a curated selection of visuals that explore demographic, behavioral, and environmental patterns linked to asthma risk:
 
-![Feature Importance Visualization](uvfExsgG4VNtcLH513brr.png)
+1. 🧑‍🤝‍🧑 Gender Distribution & Asthma Prevalence
+Alt Text: Grouped bar chart showing asthma prevalence by gender Caption: Female and male groups show similar asthma rates, with a lower prevalence among nonbinary/other individuals. Embed Code:
 
-Highlights include FeNO Level, BMI, and ER Visits as dominant predictors — styled with a teal-themed palette and precision-formatted value labels.
+![Asthma vs Gender: Grouped bar chart showing asthma prevalence by gender](image1.png)
+
+
+2. 🚬 Smoking Status vs Asthma Risk
+Alt Text: Bar chart comparing asthma occurrence across smoking categories Caption: Current smokers exhibit the highest asthma prevalence, underscoring the health impact of smoking behavior. Embed Code:
+
+![Smoking Status vs Asthma: Bar chart comparing asthma occurrence across smoking categories](image2.png)
+
+
+3. 🌾 Allergy Types & Asthma Correlation
+Alt Text: Bar chart showing asthma cases linked to different allergy types Caption: Dust and pollen allergies lead the way in asthma association — key factors in environmental risk modeling. Embed Code:
+
+![Allergy Type vs Asthma: Bar chart showing asthma cases linked to different allergy types](image3.png)
+
+
+4. 📈 Target Variable Distribution
+Alt Text: Bar chart illustrating the number of asthma-positive vs asthma-negative cases Caption: Dataset imbalance with more negative cases informs model evaluation strategy and handling of precision-recall trade-offs. Embed Code:
+
+![Has Asthma Distribution: Bar chart illustrating the number of asthma-positive vs asthma-negative cases](image4.png)
 
 ---
 
